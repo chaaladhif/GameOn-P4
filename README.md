@@ -1,6 +1,6 @@
 ![Alt text](<>)
 # GameOn: Projet 4 de Openclassrooms
-========================================================================================
+------------------------------------------------------------------
 
 * Créez une landing page pour une entreprise de gaming
 * Assurer la cohérence graphique d'un site web
