@@ -326,6 +326,12 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+.flexp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .btn-submit,
 .btn-signup {
   background: #fe142f;

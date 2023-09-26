@@ -50,7 +50,8 @@
         je m'inscris
       </button>
     </div>
-    <div class="bgroundconfirm" style="display:none;">
+    <!-- A supprimer du html et à creer sur js  -->
+    <!-- <div class="bgroundconfirm" style="display:none;">
       <div class="bgroundconfirm" id="confirmationModal">
         <div class="content">
           <div class="modal-body heightModal">
@@ -61,7 +62,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="bground">
       <div class="content">
         <span class="close"></span>
@@ -77,7 +78,7 @@
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email"><br>
+              <input class="text-control" id="email" name="email"><br>
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
@@ -85,7 +86,7 @@
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <input class="text-control" id="quantity" name="quantity">
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData">
@@ -114,9 +115,8 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked>
+              <input class="checkbox-input" type="checkbox" id="checkbox1">
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
