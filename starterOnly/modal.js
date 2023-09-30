@@ -22,7 +22,7 @@ const form=document.getElementById('form')
 const launchModal =(e)=>{
   e.preventDefault()
   modalbg.style.display = "block"
-  resetForm()  
+  //resetForm()  
 }
 /*const closebtn=document.querySelector('.btn-close')
 closebtn.addEventListener('click', closeModal)*/
@@ -199,6 +199,9 @@ const validateLocation = () => {
     return true;
   }
 }
+for (let i = 0; i < locations.length; i++) {
+  locations[i].addEventListener("change", validateLocation);
+}
 
 //validate checkCondition
 checkbox1.addEventListener('input', ()=> validateCondition())
@@ -219,8 +222,21 @@ else
 
 function validate(e) {
   e.preventDefault();
-  if (validateFirstname() && validateLastname() && validateEmail() && validateBirthdate() 
-  && validateQuantity() && validateCondition() && validateLocation()) {
+  const isFirstNameValid = validateFirstname();
+  const isLastNameValid = validateLastname();
+  const isEmailValid = validateEmail();
+  const isBirthdateValid = validateBirthdate();
+  const isQuantityValid = validateQuantity();
+  const isConditionValid = validateCondition();
+  const isLocationValid = validateLocation(); 
+
+  if ( isFirstNameValid &&
+    isLastNameValid &&
+    isEmailValid &&
+    isBirthdateValid &&
+    isQuantityValid &&
+    isConditionValid
+    && isLocationValid) {
    // Affichez le modal de confirmation
    // supprime le formulaire
    form.remove()

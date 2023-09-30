@@ -326,12 +326,6 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
-.flexp{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .btn-submit,
 .btn-signup {
   background: #fe142f;
@@ -491,6 +485,9 @@ footer {
 }
 @media screen and (max-width: 800px) {
   /*added*/
+  .topnav a{
+    color: red;
+  }
   .topnav a:hover {
    background-color: none;}
 
@@ -623,7 +620,11 @@ footer {
   }
 }
 
-
+.flexp{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -633,4 +634,3 @@ footer {
     opacity: 1;
   }
 }
-
