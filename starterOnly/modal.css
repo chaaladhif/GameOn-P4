@@ -151,23 +151,6 @@ main {
   color: #fff;
   padding-top: 10px;
 }
-/*pour modal2
-.contents {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 500px;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
-  background: #232323;
-  border-radius: 10px;
-  overflow: hidden;
-  color: #fff;
-  padding-top: 10px;
-position: absolute;
-    top: 9em;
-    left: 11em;
-    z-index: 1000;
-}*/
 .btn-center{
   align-items: center;
   display: flex;
@@ -488,8 +471,8 @@ footer {
   .topnav a{
     color: red;
   }
-  .topnav a:hover {
-   background-color: none;}
+  /*.topnav a:hover {
+   background-color: none;}*/
 
   .hero-section {
     display: block;
@@ -529,8 +512,6 @@ footer {
   }
 }
 @media screen and (max-width: 768px) {
-  
-  .topnav{
     .header-logo {
       margin-top: 1em;
       width: 40%;
@@ -538,7 +519,6 @@ footer {
     .header-logo img {
       width: 100%;
     }
-  }
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
