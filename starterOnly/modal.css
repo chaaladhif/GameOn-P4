@@ -31,7 +31,7 @@ img {
 }
 
 .topnav {
-  overflow: hidden;
+ /* overflow: hidden;*/
   margin: 3.5%;
 }
 .header-logo {
@@ -548,7 +548,7 @@ footer {
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 20px;
   }
   .topnav.responsive a {
     float: none;

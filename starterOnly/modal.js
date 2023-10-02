@@ -57,9 +57,9 @@ function resetForm() {
     closebtn.addEventListener("click", () => {
       // Rafraîchissez la page
        // Reload the page after a short delay (e.g., 3 seconds)
-    setTimeout(() => {
+  
       window.location.reload();
-    }, 1000); // 3000 milliseconds (3 seconds)
+   
 
     });
   
@@ -74,7 +74,7 @@ modalbgconfirm.style.display = "block";
 modalbg.style.display = "none"; 
 }*/
 //verifier input firstname
-  first.addEventListener("input", ()=>validateFirstname())
+  first.addEventListener("change", ()=>validateFirstname())
   const validateFirstname=()=> {
   const first = document.getElementById('first').value;
   const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
@@ -91,7 +91,7 @@ modalbg.style.display = "none";
  }
   return true; // Permet l'envoi du formulaire si toutes les validations sont passées*/
 }
-  last.addEventListener("input", ()=>validateLastname())
+  last.addEventListener("change", ()=>validateLastname())
   const validateLastname=()=>{
   const last = document.getElementById('last').value;
   const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
@@ -110,7 +110,7 @@ else{
   return true; // Permet l'envoi du formulaire si toutes les validations sont passées*/
 }
 //validate email
-email.addEventListener('input', ()=>validateEmail()) 
+email.addEventListener('change', ()=>validateEmail()) 
 const validateEmail=()=>{
   const email = document.getElementById('email').value;
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -125,7 +125,7 @@ const validateEmail=()=>{
   return true; // Permet l'envoi du formulaire si toutes les validations sont passées
 }
 //validate birthdate
-birthdate.addEventListener('input',()=> validateBirthdate());
+birthdate.addEventListener('change',()=> validateBirthdate());
 const validateBirthdate=()=> {
   const birthdate=document.getElementById('birthdate');
   const birthdateValue = birthdate.value;
@@ -157,7 +157,7 @@ const validateBirthdate=()=> {
   return true;
 }
 //validate quantity
-quantity.addEventListener("input", ()=>validateQuantity())
+quantity.addEventListener("change", ()=>validateQuantity())
 const validateQuantity =()=>{
   const quantity = document.getElementById('quantity');
   //let quantityValue=quantity.value
@@ -204,7 +204,7 @@ for (let i = 0; i < locations.length; i++) {
 }
 
 //validate checkCondition
-checkbox1.addEventListener('input', ()=> validateCondition())
+checkbox1.addEventListener('change', ()=> validateCondition())
 const validateCondition=()=>{
   const checkbox1=document.getElementById('checkbox1');
 if(!(checkbox1.checked)){
@@ -237,8 +237,9 @@ function validate(e) {
     isQuantityValid &&
     isConditionValid
     && isLocationValid) {
-   // Affichez le modal de confirmation
+
    // supprime le formulaire
+  // Affichez le modal de confirmation
    form.remove()
    modal2(e)
   }
@@ -246,7 +247,6 @@ function validate(e) {
     launchModal(e) 
   }
 }
-
 
 
 
