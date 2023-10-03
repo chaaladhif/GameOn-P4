@@ -11,6 +11,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const btnSubmit = document.querySelector(".btn-submit");
 const closebtn1 = document.querySelector(".close");
+const closebtn2= document.querySelector(".close2");
 const formData=document.querySelectorAll('.formData');
 const form=document.getElementById('form')
 // launch modal event
@@ -40,6 +41,11 @@ closebtn1.addEventListener("click", closeModal)
     closebtn.setAttribute("id", "closeConfirmationModal");
     confirmationmsg.appendChild(closebtn);
     // Ajoutez un gestionnaire d'événements au bouton de fermeture
+    closebtn2.addEventListener("click", ()=> {
+      // Rafraîchissez la page
+      window.location.reload();
+    });
+
     closebtn.addEventListener("click", () => {
       // Rafraîchissez la page
       window.location.reload();
