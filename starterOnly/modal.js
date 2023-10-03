@@ -6,9 +6,6 @@ const editNav = () => {
     x.className = "topnav";
   }
 }
-/*
-Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
-*/
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -16,31 +13,20 @@ const btnSubmit = document.querySelector(".btn-submit");
 const closebtn1 = document.querySelector(".close");
 const formData=document.querySelectorAll('.formData');
 const form=document.getElementById('form')
-//console.log(form);
-//console.log(formData);
 // launch modal event
 const launchModal =(e)=>{
   e.preventDefault()
-  modalbg.style.display = "block"
-  //resetForm()  
+  modalbg.style.display = "block"  
 }
-/*const closebtn=document.querySelector('.btn-close')
-closebtn.addEventListener('click', closeModal)*/
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal))
 // close modal 1 
 const closeModal= (e) => {
   e.preventDefault()
   modalbg.style.display = "none"
 }
+//clode modal1
 closebtn1.addEventListener("click", closeModal)
-function resetForm() {
-  // Réinitialisez les champs du formulaire ici
-  form.reset();
-  formData.forEach((data) => {
-    data.removeAttribute('data-error');
-    data.removeAttribute('data-error-visible');
-  });}
-  
+//creation de modal2
   const modal2 = () => {
     const modalparent = document.querySelector('.modal-body');
     const confirmationmsg = document.createElement('p');
@@ -52,28 +38,14 @@ function resetForm() {
     closebtn.classList.add("btn-close", "bouton");
     closebtn.setAttribute("type", "button");
     closebtn.setAttribute("id", "closeConfirmationModal");
-  
+    confirmationmsg.appendChild(closebtn);
     // Ajoutez un gestionnaire d'événements au bouton de fermeture
     closebtn.addEventListener("click", () => {
       // Rafraîchissez la page
-       // Reload the page after a short delay (e.g., 3 seconds)
-  
       window.location.reload();
-   
-
     });
-  
-    confirmationmsg.appendChild(closebtn);
   }
-
-
-// launch modal Submit event
-/*btnSubmit.addEventListener('click', launchModalconfirm);*/
-/*function launchModalconfirm() {
-modalbgconfirm.style.display = "block";
-modalbg.style.display = "none"; 
-}*/
-//verifier input firstname
+//validate input firstname
   first.addEventListener("change", ()=>validateFirstname())
   const validateFirstname=()=> {
   const first = document.getElementById('first').value;
@@ -91,6 +63,7 @@ modalbg.style.display = "none";
  }
   return true; // Permet l'envoi du formulaire si toutes les validations sont passées*/
 }
+//validate lastname
   last.addEventListener("change", ()=>validateLastname())
   const validateLastname=()=>{
   const last = document.getElementById('last').value;
@@ -160,8 +133,7 @@ const validateBirthdate=()=> {
 quantity.addEventListener("change", ()=>validateQuantity())
 const validateQuantity =()=>{
   const quantity = document.getElementById('quantity');
-  //let quantityValue=quantity.value
-  //isNaN(quantityValue)&& verifier si il est un nombre
+
   if( isNaN(quantity.value) || quantity.value==="" ){ 
     formData[4].setAttribute('data-error-visible', true)
     formData[4].setAttribute('data-error', "veuillez entrer un nombre de 0 à 99 !" )
