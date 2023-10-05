@@ -55,7 +55,7 @@ closebtn1.addEventListener("click", closeModal)
   first.addEventListener("change", ()=>validateFirstname())
   const validateFirstname=()=> {
   const first = document.getElementById('first').value;
-  const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
+  //const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
 
   if (!lettersOnlyRegex.test(first) || first.length < 2) {
   formData[0].setAttribute("data-error-visible", true);
@@ -73,7 +73,7 @@ closebtn1.addEventListener("click", closeModal)
   last.addEventListener("change", ()=>validateLastname())
   const validateLastname=()=>{
   const last = document.getElementById('last').value;
-  const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
+ // const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
 
   if (!lettersOnlyRegex.test(last) || last.length < 2) {
   formData[1].setAttribute("data-error-visible", true);
@@ -114,12 +114,13 @@ const validateBirthdate=()=> {
     formData[3].setAttribute('data-error', 'Veuillez entrer une date de naissance !');
     return false;
   }
-  // Convertissez la valeur de la date de naissance en objet Date
+  //crée un objet JavaScript de type Date à partir de la valeur de la date de naissance
   const birthdateDate = new Date(birthdateValue);
   // Obtenez la date courante
   const currentDate = new Date();
-  // Calculez l'âge en années
+  //calcule la différence en millisecondes entre la date actuelle et la date de naissance
   const ageInMilliseconds = currentDate - birthdateDate;
+  // Calculez l'âge en années math.floor
   const ageInYears = Math.floor(ageInMilliseconds / (365.25 * 24 * 60 * 60 * 1000)); // Utilisation d'une approximation pour les années bissextiles
   // Vérifiez si l'âge est inférieur à 18
   if (ageInYears < 18) {
@@ -139,7 +140,7 @@ const validateBirthdate=()=> {
 quantity.addEventListener("change", ()=>validateQuantity())
 const validateQuantity =()=>{
   const quantity = document.getElementById('quantity');
-
+// valeur donnée est de type "NaN" (Not-a-Number)
   if( isNaN(quantity.value) || quantity.value==="" ){ 
     formData[4].setAttribute('data-error-visible', true)
     formData[4].setAttribute('data-error', "veuillez entrer un nombre de 0 à 99 !" )
@@ -162,9 +163,11 @@ const locations = document.getElementsByName("location");
 const validateLocation = () => {
   let isAnyChecked = false;
   for (let i = 0; i < locations.length; i++) {
+   // À chaque itération de la boucle, on vérifie si le bouton radio actuel est cochée 
+   //on peut utiliser do.. while
     if (locations[i].checked) {
-      isAnyChecked = true;
-      break; // Exit the loop as soon as one radio button is checked
+      isAnyChecked = true; //si bouton coché
+      break; // arreter le code, inutile de continuer si checked
     }
   }
   if (!isAnyChecked) {
