@@ -57,7 +57,7 @@ closebtn1.addEventListener("click", closeModal)
   const first = document.getElementById('first').value;
   //const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
 
-  if (!lettersOnlyRegex.test(first) || first.length < 2) {
+  if (first==="" || first.length < 2) {
   formData[0].setAttribute("data-error-visible", true);
   formData[0].setAttribute("data-error", "Veuillez entrer au minimum deux lettres !");  
   return false; // Empêche l'envoi du formulaire
@@ -75,7 +75,7 @@ closebtn1.addEventListener("click", closeModal)
   const last = document.getElementById('last').value;
  // const lettersOnlyRegex = /^[A-Za-z]+$/; // Regex to match letters only
 
-  if (!lettersOnlyRegex.test(last) || last.length < 2) {
+  if (last==="" || last.length < 2) {
   formData[1].setAttribute("data-error-visible", true);
   formData[1].setAttribute("data-error", "Veuillez entrer au minimum deux lettres !");
    return false; // Empêche l'envoi du formulaire
